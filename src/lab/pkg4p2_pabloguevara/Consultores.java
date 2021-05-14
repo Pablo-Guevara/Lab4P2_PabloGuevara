@@ -105,6 +105,11 @@ public class Consultores extends empleados{
     public String toString() {
         return super.toString()+ "Consultores{" + "nombre=" + nombre + ", apellido=" + apellido + ", id=" + id + ", nacionalidad=" + nacionalidad + ", cantProyectosRealizados=" + cantProyectosRealizados + ", a\u00f1osContrato=" + añosContrato + ", prinCampoExp=" + prinCampoExp + ", tiempDurConsul=" + tiempDurConsul + '}';
     }
+
+    @Override
+    public void sueldo() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
         
 }

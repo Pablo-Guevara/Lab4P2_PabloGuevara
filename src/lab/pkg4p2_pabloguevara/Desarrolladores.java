@@ -126,6 +126,11 @@ public class Desarrolladores extends empleados{
         return super.toString()+"Desarrolladores{" + "nombre=" + nombre + ", apellido=" + apellido + ", id=" + id + ", nacionalidad=" + nacionalidad + ", cantProyectosRealizados=" + cantProyectosRealizados + ", a\u00f1osExperiencia=" + añosExperiencia + ", a\u00f1osContrato=" + añosContrato + ", lenguajeProgaPreferido=" + lenguajeProgaPreferido + ", horasTrabDiarias=" + horasTrabDiarias + ", sueldoMensual=" + sueldoMensual + '}';
     }
 
+    @Override
+    public void sueldo() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     
    
 }

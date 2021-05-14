@@ -118,6 +118,11 @@ public class Directores extends empleados{
     public String toString() {
         return super.toString()+"Directores{" + "nombre=" + nombre + ", apellido=" + apellido + ", id=" + id + ", nacionalidad=" + nacionalidad + ", a\u00f1osDurantePuesto=" + añosDurantePuesto + ", a\u00f1osContrato=" + añosContrato + ", desarrolladoresAsig=" + desarrolladoresAsig + ", cantProyectosRealizados=" + cantProyectosRealizados + ", sueldoMensual=" + sueldoMensual + '}';
     }
+
+    @Override
+    public void sueldo() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     
     

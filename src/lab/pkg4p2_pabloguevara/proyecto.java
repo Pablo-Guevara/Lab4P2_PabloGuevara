@@ -2,7 +2,7 @@ package lab.pkg4p2_pabloguevara;
 
 import java.util.ArrayList;
 
-public class proyecto extends empleados{
+public class proyecto {
     private String nombre;
     private String nombreEmpSolicitante;
     private String descripcion;
@@ -13,7 +13,6 @@ public class proyecto extends empleados{
     private ArrayList<Consultores> Consultores;
 
     public proyecto() {
-        super();
     }
 
     public proyecto(String nombre, String nombreEmpSolicitante, String descripcion, int cantAñosDuracion, String EstadoActual, ArrayList<Directores> DirectoresEncargados, ArrayList<Desarrolladores> desarrolladoreses, ArrayList<Consultores> Consultores) {
@@ -26,6 +25,8 @@ public class proyecto extends empleados{
         this.desarrolladoreses = desarrolladoreses;
         this.Consultores = Consultores;
     }
+
+   
 
     public String getNombre() {
         return nombre;

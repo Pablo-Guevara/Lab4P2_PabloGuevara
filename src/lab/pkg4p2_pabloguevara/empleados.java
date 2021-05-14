@@ -1,6 +1,6 @@
 package lab.pkg4p2_pabloguevara;
 
-public class empleados {
+public abstract class empleados {
     private String usuario;
     private String contraseña;
 
@@ -28,5 +28,5 @@ public class empleados {
         this.contraseña = contraseña;
     }
     
-    
+    public abstract void sueldo();
 }
