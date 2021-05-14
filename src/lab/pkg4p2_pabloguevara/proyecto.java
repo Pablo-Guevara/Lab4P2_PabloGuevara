@@ -15,6 +15,14 @@ public class proyecto {
     public proyecto() {
     }
 
+    public proyecto(String nombre, String nombreEmpSolicitante, String descripcion, int cantAñosDuracion, String EstadoActual) {
+        this.nombre = nombre;
+        this.nombreEmpSolicitante = nombreEmpSolicitante;
+        this.descripcion = descripcion;
+        this.cantAñosDuracion = cantAñosDuracion;
+        this.EstadoActual = EstadoActual;
+    }
+
     public proyecto(String nombre, String nombreEmpSolicitante, String descripcion, int cantAñosDuracion, String EstadoActual, ArrayList<Directores> DirectoresEncargados, ArrayList<Desarrolladores> desarrolladoreses, ArrayList<Consultores> Consultores) {
         this.nombre = nombre;
         this.nombreEmpSolicitante = nombreEmpSolicitante;
