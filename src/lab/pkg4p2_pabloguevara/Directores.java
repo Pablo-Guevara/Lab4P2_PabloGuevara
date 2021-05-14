@@ -17,6 +17,25 @@ public class Directores extends empleados{
         super();
     }
 
+    public Directores(String nombre, String apellido, long id, String nacionalidad, int añosDurantePuesto, int añosContrato) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.id = id;
+        this.nacionalidad = nacionalidad;
+        this.añosDurantePuesto = añosDurantePuesto;
+        this.añosContrato = añosContrato;
+    }
+
+    public Directores(String nombre, String apellido, long id, String nacionalidad, int añosDurantePuesto, int añosContrato, String usuario, String contraseña) {
+        super(usuario, contraseña);
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.id = id;
+        this.nacionalidad = nacionalidad;
+        this.añosDurantePuesto = añosDurantePuesto;
+        this.añosContrato = añosContrato;
+    }
+
     public Directores(String nombre, String apellido, long id, String nacionalidad, int añosDurantePuesto, int añosContrato, ArrayList<Desarrolladores> desarrolladoresAsig, int cantProyectosRealizados, float sueldoMensual) {
         this.nombre = nombre;
         this.apellido = apellido;
@@ -120,8 +139,8 @@ public class Directores extends empleados{
     }
 
     @Override
-    public void sueldo() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public float sueldo() {
+        return sueldoMensual;
     }
     
     

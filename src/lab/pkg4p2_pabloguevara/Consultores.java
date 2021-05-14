@@ -14,6 +14,27 @@ public class Consultores extends empleados{
         super();
     }
 
+    public Consultores(String nombre, String apellido, long id, String nacionalidad, int añosContrato, String prinCampoExp, float tiempDurConsul) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.id = id;
+        this.nacionalidad = nacionalidad;
+        this.añosContrato = añosContrato;
+        this.prinCampoExp = prinCampoExp;
+        this.tiempDurConsul = tiempDurConsul;
+    }
+
+    public Consultores(String nombre, String apellido, long id, String nacionalidad, int añosContrato, String prinCampoExp, float tiempDurConsul, String usuario, String contraseña) {
+        super(usuario, contraseña);
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.id = id;
+        this.nacionalidad = nacionalidad;
+        this.añosContrato = añosContrato;
+        this.prinCampoExp = prinCampoExp;
+        this.tiempDurConsul = tiempDurConsul;
+    }
+
     public Consultores(String nombre, String apellido, long id, String nacionalidad, int cantProyectosRealizados, int añosContrato, String prinCampoExp, float tiempDurConsul) {
         this.nombre = nombre;
         this.apellido = apellido;
@@ -107,8 +128,8 @@ public class Consultores extends empleados{
     }
 
     @Override
-    public void sueldo() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public float sueldo() {
+        return tiempDurConsul;
     }
     
         

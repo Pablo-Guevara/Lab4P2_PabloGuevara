@@ -8,7 +8,7 @@ public class Desarrolladores extends empleados{
    private int cantProyectosRealizados;
    private int añosExperiencia;
    private int añosContrato;
-   private int lenguajeProgaPreferido;
+   private String lenguajeProgaPreferido;
    private int horasTrabDiarias;
    private float sueldoMensual=0;
 
@@ -16,7 +16,30 @@ public class Desarrolladores extends empleados{
         super();
     }
 
-    public Desarrolladores(String nombre, String apellido, long id, String nacionalidad, int cantProyectosRealizados, int añosExperiencia, int añosContrato, int lenguajeProgaPreferido, int horasTrabDiarias) {
+    public Desarrolladores(String nombre, String apellido, long id, String nacionalidad, int añosExperiencia, int añosContrato, String lenguajeProgaPreferido, int horasTrabDiarias) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.id = id;
+        this.nacionalidad = nacionalidad;
+        this.añosExperiencia = añosExperiencia;
+        this.añosContrato = añosContrato;
+        this.lenguajeProgaPreferido = lenguajeProgaPreferido;
+        this.horasTrabDiarias = horasTrabDiarias;
+    }
+
+    public Desarrolladores(String nombre, String apellido, long id, String nacionalidad, int añosExperiencia, int añosContrato, String lenguajeProgaPreferido, int horasTrabDiarias, String usuario, String contraseña) {
+        super(usuario, contraseña);
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.id = id;
+        this.nacionalidad = nacionalidad;
+        this.añosExperiencia = añosExperiencia;
+        this.añosContrato = añosContrato;
+        this.lenguajeProgaPreferido = lenguajeProgaPreferido;
+        this.horasTrabDiarias = horasTrabDiarias;
+    }
+
+    public Desarrolladores(String nombre, String apellido, long id, String nacionalidad, int cantProyectosRealizados, int añosExperiencia, int añosContrato, String lenguajeProgaPreferido, int horasTrabDiarias) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.id = id;
@@ -28,7 +51,7 @@ public class Desarrolladores extends empleados{
         this.horasTrabDiarias = horasTrabDiarias;
     }
 
-    public Desarrolladores(String nombre, String apellido, long id, String nacionalidad, int cantProyectosRealizados, int añosExperiencia, int añosContrato, int lenguajeProgaPreferido, int horasTrabDiarias, String usuario, String contraseña) {
+    public Desarrolladores(String nombre, String apellido, long id, String nacionalidad, int cantProyectosRealizados, int añosExperiencia, int añosContrato, String lenguajeProgaPreferido, int horasTrabDiarias, String usuario, String contraseña) {
         super(usuario, contraseña);
         this.nombre = nombre;
         this.apellido = apellido;
@@ -97,11 +120,11 @@ public class Desarrolladores extends empleados{
         this.añosContrato = añosContrato;
     }
 
-    public int getLenguajeProgaPreferido() {
+    public String getLenguajeProgaPreferido() {
         return lenguajeProgaPreferido;
     }
 
-    public void setLenguajeProgaPreferido(int lenguajeProgaPreferido) {
+    public void setLenguajeProgaPreferido(String lenguajeProgaPreferido) {
         this.lenguajeProgaPreferido = lenguajeProgaPreferido;
     }
 
@@ -127,8 +150,9 @@ public class Desarrolladores extends empleados{
     }
 
     @Override
-    public void sueldo() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public float sueldo() {
+        sueldoMensual=(cantProyectosRealizados*115000*2)/cantProyectosRealizados+añosContrato;
+         return sueldoMensual;
     }
 
     

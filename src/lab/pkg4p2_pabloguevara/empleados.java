@@ -28,5 +28,5 @@ public abstract class empleados {
         this.contraseña = contraseña;
     }
     
-    public abstract void sueldo();
+    public abstract float sueldo();
 }

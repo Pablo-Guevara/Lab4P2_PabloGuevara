@@ -3,6 +3,25 @@ package lab.pkg4p2_pabloguevara;
 
 public class Administrador extends empleados{
 
+    private float sueldo;
+
+    public float getSueldo() {
+        return sueldo;
+    }
+
+    public void setSueldo(float sueldo) {
+        this.sueldo = sueldo;
+    }
+
+    public Administrador(float sueldo) {
+        this.sueldo = sueldo;
+    }
+
+    public Administrador(float sueldo, String usuario, String contraseña) {
+        super(usuario, contraseña);
+        this.sueldo = sueldo;
+    }
+    
     public Administrador() {
         super();
     }
@@ -16,8 +35,9 @@ public class Administrador extends empleados{
 
     
     @Override
-    public void sueldo() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public float sueldo() {
+        return  sueldo;
+
     }
     
 }
