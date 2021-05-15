@@ -1,5 +1,7 @@
 package lab.pkg4p2_pabloguevara;
 
+import java.util.ArrayList;
+
 public class Consultores extends empleados{
      private String nombre;
     private String apellido;
@@ -9,6 +11,7 @@ public class Consultores extends empleados{
     private int añosContrato;
     private String prinCampoExp;
     private float tiempDurConsul;
+    private ArrayList<proyecto> proyectosAsingados;
     
     private float sueldo;
 
@@ -131,7 +134,7 @@ public class Consultores extends empleados{
 
     @Override
     public float sueldo() {
-        sueldo=(float) ((cantProyectosRealizados*13280*4.13)/(cantProyectosRealizados*añosContrato*2.28));
+        sueldo=(float) ((cantProyectosRealizados*13280*4.13)/(proyectosAsingados.size()*añosContrato*2.28));
         return sueldo;
     }
     

@@ -16,7 +16,7 @@ public class Lab4P2_PabloGuevara {
 
         Administrador Adm = new Administrador();
 
-        while (opcion != 10) {
+        while (opcion != 11) {
             try {
 
                 System.out.println("1.Crear usuario: ");
@@ -28,6 +28,7 @@ public class Lab4P2_PabloGuevara {
                 System.out.println("7.Listar empleados");
                 System.out.println("8.Eliminar empleados");
                 System.out.println("9.Modificar empleados");
+                System.out.println("10.Asignar proyectos");
                 System.out.println("Elija su opcion: ");
                 opcion = leer.nextInt();
 
@@ -465,12 +466,13 @@ public class Lab4P2_PabloGuevara {
                     for (int i = 0; i < listaEmpleados.size(); i++) {
                             if (usuarioSis.equals(listaEmpleados.get(i).getUsuario()) && contraseñaSis.equals(listaEmpleados.get(i).getContraseña())) {
                                
-                                if (listaEmpleados.get(i).getClass().getSimpleName().equals("Dessarrolladores")) {
+                                if (listaEmpleados.get(i).getClass().getSimpleName().equals("Desarrolladores")) {
                                     int ini1=0;
                                     try {
                                         System.out.println("1.Ver mi información");
                                         System.out.println("2.Eliminar cuenta");
                                         System.out.println("3.Ver proyectos asignados");
+                                        
                                         System.out.println("Ingrese su opcion: ");
                                          ini1 = leer.nextInt();
 
@@ -483,7 +485,148 @@ public class Lab4P2_PabloGuevara {
                                     if (ini1==1) {
                                         System.out.println("Mi información: "+listaEmpleados.get(i));
                                     }
+                                    
+                                    if (ini1==2) {
+                                        listaEmpleados.remove(i);
+                                        System.out.println("Cuenta eliminada");                                       
+                                    }
+                                    
+                                    if (ini1==3) {
+                                        System.out.println("Proyectos asignados: ");
+                                        
+                                        Desarrolladores D=new Desarrolladores();
+                                        System.out.println(listaEmpleados.get(i).getProyectosAsingados());
+                                    }
+                                }//Fin 1
+                                if (listaEmpleados.get(i).getClass().getSimpleName().equals("Consultores")) {
+                                    int ini1=0;
+                                    try {
+                                        System.out.println("1.Ver mi información");
+                                        System.out.println("2.Eliminar cuenta");
+                                        System.out.println("3.Modificar ");
+                                        System.out.println("4.Ver proyectos asignados");
+                                        System.out.println("Ingrese su opcion: ");
+                                         ini1 = leer.nextInt();
+
+                                       
+                                    } catch (InputMismatchException e) {
+                                        System.out.println("El valor ingresado no es válido");
+                                        leer.nextLine();
+                                    }
+                                    
+                                    if (ini1==1) {
+                                        System.out.println("Mi información: "+listaEmpleados.get(i));
+                                    }
+                                    
+                                    if (ini1==2) {
+                                        listaEmpleados.remove(i);
+                                        System.out.println("Cuenta eliminada");                                       
+                                    }
+                                    if (ini1==3) {
+                                            String nombre;
+                            String apellido;
+
+                            long id = 0;
+                            int cicloId = 0;
+
+                            String nacionalidad;
+
+                            int añosContrato = 0;
+                            int cicloAñosContrato = 0;
+
+                            String prinCampoExp;
+
+                            float tiempDurConsul = 0;
+                            int cicloTiempoDurConsult = 0;
+
+                            System.out.println("Ingrese nombre del consultor: ");
+                            nombre = leer.next();
+                            System.out.println("Ingrese apellido del consultor: ");
+                            apellido = leer.next();
+
+                            while (cicloId == 0) {
+                                try {
+                                    System.out.println("Ingrese ID del consultor: ");
+                                    id = leer.nextLong();
+                                    cicloId = 1;
+                                } catch (InputMismatchException e) {
+                                    System.out.println("El valor ingresado no es un ID");
+                                    leer.nextLine();
                                 }
+                            }
+
+                            System.out.println("Ingrese nacionalidad del consultor: ");
+                            nacionalidad = leer.next();
+
+                            while (cicloAñosContrato == 0) {
+                                try {
+                                    System.out.println("Ingrese los años de contrato del consultor: ");
+                                    añosContrato = leer.nextInt();
+                                    cicloAñosContrato = 1;
+                                } catch (InputMismatchException e) {
+                                    System.out.println("El valor ingresado no es válido");
+                                    leer.nextLine();
+                                }
+                            }
+
+                            System.out.println("Ingrese principal campo de experiencia del consultor: ");
+                            prinCampoExp = leer.next();
+
+                            while (cicloTiempoDurConsult == 0) {
+                                try {
+                                    System.out.println("Ingrese el tiempo de duracion de la consulta del consultor: ");
+                                    tiempDurConsul = leer.nextFloat();
+                                    cicloTiempoDurConsult = 1;
+                                } catch (InputMismatchException e) {
+                                    System.out.println("El valor ingresado no es válido");
+                                    leer.nextLine();
+                                }
+                            }
+                            listaEmpleados.remove(i);
+                            listaEmpleados.add(i, new Consultores(nombre, apellido, id, nacionalidad, añosContrato, prinCampoExp, tiempDurConsul));                                  
+                                    }
+                                    
+                                    if (ini1==4) {
+                                        System.out.println("Proyectos asignados: ");
+                                        
+                                        Desarrolladores D=new Desarrolladores();
+                                        System.out.println(listaEmpleados.get(i).getProyectosAsingados());
+                                    }
+                                }//fin 2
+                                
+                                if (listaEmpleados.get(i).getClass().getSimpleName().equals("Directores")) {
+                                    int ini1=0;
+                                    try {
+                                        System.out.println("1.Ver mi información");
+                                        System.out.println("2.Eliminar cuenta");
+                                        System.out.println("3.Ver proyectos");
+                                        
+                                        System.out.println("Ingrese su opcion: ");
+                                         ini1 = leer.nextInt();
+
+                                       
+                                    } catch (InputMismatchException e) {
+                                        System.out.println("El valor ingresado no es válido");
+                                        leer.nextLine();
+                                    }
+                                    
+                                    if (ini1==1) {
+                                        System.out.println("Mi información: "+listaEmpleados.get(i));
+                                    }
+                                    
+                                    if (ini1==2) {
+                                        listaEmpleados.remove(i);
+                                        System.out.println("Cuenta eliminada");                                       
+                                    }
+                                    
+                                    if (ini1==3) {
+                                        System.out.println("Proyectos: ");
+                                        for (int j = 0; j < listaProyectos.size(); j++) {
+                                            System.out.println(listaProyectos.get(i));
+                                        }
+                                    }
+                                }//Fin 3
+                                
                             }
                     }
                     
@@ -938,6 +1081,24 @@ public class Lab4P2_PabloGuevara {
                         //Fin modificar director
                     }
                 }//Fin 9
+                
+                if (opcion==10) {
+                    int numPro=0, numEmp=0;
+                    for (int i = 0; i < listaEmpleados.size(); i++) {
+                        System.out.println(i+"-"+listaEmpleados.get(i));
+                    }
+                    System.out.println("Ingrese empleado a asignarle un pproyecto: ");
+                    numPro=leer.nextInt();
+                    
+                    for (int i = 0; i < listaProyectos.size(); i++) {
+                        System.out.println(i+"-"+listaProyectos.get(i));
+                    }
+                    System.out.println("Ingrese proyecto asignar: ");
+                    numPro=leer.nextInt();
+                    
+                    listaEmpleados.get(numEmp).getProyectosAsingados().add(listaProyectos.get(numPro));
+                    System.out.println("Proyecto asignado");
+                }
             } catch (InputMismatchException e) {
                 System.out.println("El valor ingresado no se encuentra en la lista");
                 leer.nextLine();

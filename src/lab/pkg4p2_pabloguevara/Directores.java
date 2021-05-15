@@ -10,6 +10,7 @@ public class Directores extends empleados{
     private int añosDurantePuesto;
     private int añosContrato;
     private ArrayList<Desarrolladores> desarrolladoresAsig;
+     private ArrayList<proyecto> proyectosAsingados;
     private int cantProyectosRealizados;
     private float sueldoMensual;
 
@@ -140,7 +141,7 @@ public class Directores extends empleados{
 
     @Override
     public float sueldo() {
-        sueldoMensual=(float) (cantProyectosRealizados*cantProyectosRealizados*cantProyectosRealizados*cantProyectosRealizados*5.23
+        sueldoMensual=(float) (cantProyectosRealizados*proyectosAsingados.size()*proyectosAsingados.size()*cantProyectosRealizados*5.23
                 /cantProyectosRealizados*añosContrato*2.28);
         return sueldoMensual;
     }

@@ -11,6 +11,7 @@ public class Desarrolladores extends empleados{
    private String lenguajeProgaPreferido;
    private int horasTrabDiarias;
    private float sueldoMensual=0;
+  
 
     public Desarrolladores() {
         super();
@@ -151,7 +152,7 @@ public class Desarrolladores extends empleados{
 
     @Override
     public float sueldo() {
-        sueldoMensual=(cantProyectosRealizados*115000*2)/cantProyectosRealizados+añosContrato;
+        sueldoMensual=(cantProyectosRealizados*115000*2)/proyectosAsingados.size()+añosContrato;
          return sueldoMensual;
     }
 
