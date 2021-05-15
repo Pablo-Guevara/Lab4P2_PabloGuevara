@@ -2,7 +2,8 @@ package lab.pkg4p2_pabloguevara;
 
 import java.util.ArrayList;
 
-public class Directores extends empleados{
+public class Directores extends empleados {
+
     private String nombre;
     private String apellido;
     private long id;
@@ -10,7 +11,7 @@ public class Directores extends empleados{
     private int añosDurantePuesto;
     private int añosContrato;
     private ArrayList<Desarrolladores> desarrolladoresAsig;
-     private ArrayList<proyecto> proyectosAsingados;
+    private ArrayList<proyecto> proyectosAsingados;
     private int cantProyectosRealizados;
     private float sueldoMensual;
 
@@ -136,16 +137,14 @@ public class Directores extends empleados{
 
     @Override
     public String toString() {
-        return super.toString()+"Directores{" + "nombre=" + nombre + ", apellido=" + apellido + ", id=" + id + ", nacionalidad=" + nacionalidad + ", a\u00f1osDurantePuesto=" + añosDurantePuesto + ", a\u00f1osContrato=" + añosContrato + ", desarrolladoresAsig=" + desarrolladoresAsig + ", cantProyectosRealizados=" + cantProyectosRealizados + ", sueldoMensual=" + sueldoMensual + '}';
+        return super.toString() + "Directores{" + "nombre=" + nombre + ", apellido=" + apellido + ", id=" + id + ", nacionalidad=" + nacionalidad + ", a\u00f1osDurantePuesto=" + añosDurantePuesto + ", a\u00f1osContrato=" + añosContrato + ", desarrolladoresAsig=" + desarrolladoresAsig + ", cantProyectosRealizados=" + cantProyectosRealizados + ", sueldoMensual=" + sueldoMensual + '}';
     }
 
     @Override
     public float sueldo() {
-        sueldoMensual=(float) (cantProyectosRealizados*proyectosAsingados.size()*proyectosAsingados.size()*cantProyectosRealizados*5.23
-                /cantProyectosRealizados*añosContrato*2.28);
+        sueldoMensual = (float) (cantProyectosRealizados * proyectosAsingados.size() * proyectosAsingados.size() * cantProyectosRealizados * 5.23
+                / cantProyectosRealizados * añosContrato * 2.28);
         return sueldoMensual;
     }
-    
-    
-    
+
 }

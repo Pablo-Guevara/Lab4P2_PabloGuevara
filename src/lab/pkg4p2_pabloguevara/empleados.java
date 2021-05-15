@@ -3,9 +3,10 @@ package lab.pkg4p2_pabloguevara;
 import java.util.ArrayList;
 
 public abstract class empleados {
+
     private String usuario;
     private String contraseña;
-      protected ArrayList proyectosAsingados;
+    protected ArrayList proyectosAsingados;
 
     public ArrayList getProyectosAsingados() {
         return proyectosAsingados;
@@ -38,6 +39,6 @@ public abstract class empleados {
     public void setContraseña(String contraseña) {
         this.contraseña = contraseña;
     }
-    
+
     public abstract float sueldo();
 }
