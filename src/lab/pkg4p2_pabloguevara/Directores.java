@@ -140,6 +140,8 @@ public class Directores extends empleados{
 
     @Override
     public float sueldo() {
+        sueldoMensual=(float) (cantProyectosRealizados*cantProyectosRealizados*cantProyectosRealizados*cantProyectosRealizados*5.23
+                /cantProyectosRealizados*añosContrato*2.28);
         return sueldoMensual;
     }
     

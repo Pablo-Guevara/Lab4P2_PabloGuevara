@@ -32,9 +32,9 @@ public class Lab4P2_PabloGuevara {
                 opcion = leer.nextInt();
 
                 if (opcion == 1) {
-                    System.out.println("Ingrese nombre de usuario: ");
+                    System.out.println("Ingrese nuevo nombre de usuario: ");
                     Usuario = leer.next();
-                    System.out.println("Ingrese contraseña: ");
+                    System.out.println("Ingrese nueva contraseña: ");
                     Contraseña = leer.next();
 
                     if (Usuario.equals("admin") && Contraseña.equals("1234")) {
@@ -43,12 +43,12 @@ public class Lab4P2_PabloGuevara {
                         listaEmpleados.add(Adm);
                         System.out.println("Se a ingresado un administrador al sistema");
                     } else {
-                        System.out.println("Ingrese nombre de usuario: ");
+                        System.out.println("Ingrese nombre de usuario del administrador: ");
                         usuarioV = leer.next();
-                        System.out.println("Ingrese contraseña: ");
+                        System.out.println("Ingrese contraseña del administrador: ");
                         contraseñaV = leer.next();
 
-                        if (Usuario.equals("admin") && Contraseña.equals("1234")) {
+                        if (usuarioV.equals("admin") && contraseñaV.equals("1234")) {
                             while (cicloEmpleado == 0) {
                                 try {
                                     System.out.println("¿Que tipo de empleado desea registrar?");
@@ -454,7 +454,41 @@ public class Lab4P2_PabloGuevara {
                         }
                     }
                 }
+                  //INICIO DE SESION
+                if (opcion==2) {
+                    System.out.println("Ingrese nombre de usuario: ");
+                    String usuarioSis = leer.next();
 
+                    System.out.println("Ingrese contraseña: ");
+                    String contraseñaSis = leer.next();
+                    
+                    for (int i = 0; i < listaEmpleados.size(); i++) {
+                            if (usuarioSis.equals(listaEmpleados.get(i).getUsuario()) && contraseñaSis.equals(listaEmpleados.get(i).getContraseña())) {
+                               
+                                if (listaEmpleados.get(i).getClass().getSimpleName().equals("Dessarrolladores")) {
+                                    int ini1=0;
+                                    try {
+                                        System.out.println("1.Ver mi información");
+                                        System.out.println("2.Eliminar cuenta");
+                                        System.out.println("3.Ver proyectos asignados");
+                                        System.out.println("Ingrese su opcion: ");
+                                         ini1 = leer.nextInt();
+
+                                       
+                                    } catch (InputMismatchException e) {
+                                        System.out.println("El valor ingresado no es válido");
+                                        leer.nextLine();
+                                    }
+                                    
+                                    if (ini1==1) {
+                                        System.out.println("Mi información: "+listaEmpleados.get(i));
+                                    }
+                                }
+                            }
+                    }
+                    
+                }//FIN INICIO DE SESION
+                
                 if (opcion == 3) {
                     String usuario3, contraseña3;
                     System.out.println("Ingrese nombre de usuario: ");

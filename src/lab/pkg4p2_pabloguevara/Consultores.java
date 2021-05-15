@@ -9,6 +9,8 @@ public class Consultores extends empleados{
     private int añosContrato;
     private String prinCampoExp;
     private float tiempDurConsul;
+    
+    private float sueldo;
 
     public Consultores() {
         super();
@@ -129,7 +131,8 @@ public class Consultores extends empleados{
 
     @Override
     public float sueldo() {
-        return tiempDurConsul;
+        sueldo=(float) ((cantProyectosRealizados*13280*4.13)/(cantProyectosRealizados*añosContrato*2.28));
+        return sueldo;
     }
     
         
